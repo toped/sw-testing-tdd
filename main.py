@@ -44,7 +44,7 @@ def verifyEmailAddress(inputEmail):
 printMenu()
 
 #Prompt user for the function that they want to run
-funcType = raw_input("What would you like to calculate? ")
+funcType = '1' #input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
