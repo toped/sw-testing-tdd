@@ -15,7 +15,7 @@ Mauri Mitchell
 Python v2.7
 
 """
-
+import math
 
 # This function prints the user menu
 def printMenu():
@@ -34,7 +34,7 @@ def calculateRetirement(age, salary, percentSaved, savingsGoal):
     print("\n TO-DO: complete function")
 
 def calculateDistance(x1, y1, x2,y2):
-    print("\n TO-DO: complete function")
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
 def verifyEmailAddress(inputEmail):
     print("\n TO-DO: complete function")
