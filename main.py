@@ -33,8 +33,27 @@ def calculateBMI(heightFeet, heightInches, weight):
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
     print("\n TO-DO: complete function")
 
-def calculateDistance(x1, y1, x2,y2):
-    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+def calculateDistance(x1, y1, x2, y2):
+    result = None
+    
+    # ensure x and y values are either a float or int
+    if((isinstance(x1, int) or isinstance(x1, float)) and (isinstance(x2, int) or isinstance(x2, float)) and (isinstance(y1, int) or isinstance(y1, float)) and (isinstance(y2, int) or isinstance(y2, float))):
+        #ensure x and y values are not larger than 1000000000
+        if(x1 > 1000000000 or x2 > 1000000000 or y1 > 1000000000 or y2 > 1000000000):
+            result = "One of your values is too large. x and y values must be <= 1000000000."
+        #ensure x and y values are not smaller than -1000000000
+        elif(x1 < -1000000000 or x2 < -1000000000 or y1 < -1000000000 or y2 < -1000000000):
+            result = "One of your values is too small. x and y values must be >= -1000000000."
+        #else return resulting distance
+        else:
+            result = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    #else display that x or y value is not numeric
+    else:
+        result = "One of your values is not numeric. x and y values must be either an integer or float."
+       
+    # return resulting integer, float, or string
+    return result
+    
 
 def verifyEmailAddress(inputEmail):
     print("\n TO-DO: complete function")
