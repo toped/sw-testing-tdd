@@ -38,10 +38,12 @@ def calculateDistance(x1, y1, x2,y2):
     print("\n TO-DO: complete function")
 
 def verifyEmailAddress(inputEmail):
+    numAtSymbols = inputEmail.count('@')
+
     matchObject = re.search('^.+@.+\.[A-za-z]{1,2}$',
                   inputEmail)
 
-    if matchObject:
+    if matchObject and numAtSymbols == 1:
         return True
     else:
         return False
@@ -50,7 +52,7 @@ def verifyEmailAddress(inputEmail):
 printMenu()
 
 #Prompt user for the function that they want to run
-funcType = '4' #input("What would you like to calculate? ")
+funcType = '4' #raw_input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
@@ -63,7 +65,7 @@ elif funcType == "3":
     print("\n TO-DO: prompt for user input then call function to return output")
 elif funcType == "4":
     print("\n Email Verifier")
-    inputString = 'hds109@msstate.ed' #input("Please enter an email address that you would like to verify: ")
+    inputString = 'hds109@msstate.ed' #raw_input("Please enter an email address that you would like to verify: ")
     isValid = verifyEmailAddress(inputString)
 
     if isValid:

@@ -13,3 +13,7 @@ from main import verifyEmailAddress
 
 def test_valid_email():
     assert verifyEmailAddress("hds109@msstate.ed") == True
+
+def test_input_with_multiple_at_symbols():
+    assert verifyEmailAddress("hds@109@msstate.ed") == False
+    assert verifyEmailAddress("hds109@@msstate.ed") == False
