@@ -29,7 +29,24 @@ def printMenu():
 
 
 def calculateBMI(heightFeet, heightInches, weight):
-    print("\n TO-DO: complete function")
+    if ((isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
+        kgWeight = weight * 0.45
+        totalHeightInches = (heightFeet * 12) + heightInches
+        metricHeight = totalHeightInches * 0.025
+        BMIValue = kgWeight / (math.pow(metricHeight, 2))
+    else:
+        message = "Please enter numeric values."
+        
+    if (BMIValue <= 18.5):
+        message = "Your body mass index is: " + BMIValue + ". You are underweight."
+    elif(BMIValue > 18.5 and BMIValue < 25):
+        message = "Your body mass index is: " + BMIValue + ". You are of normal weight."
+    elif (BMIValue >= 25 and BMIValue < 30):
+        message = "Your body mass index is: " + BMIValue + ". You are overweight."
+    elif (BMIValue >= 30):
+        message = "Your body mass index is: " + BMIValue + ". You are obese."
+
+    return message        
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
     print("\n TO-DO: complete function")
@@ -52,7 +69,7 @@ def verifyEmailAddress(inputEmail):
 printMenu()
 
 #Prompt user for the function that they want to run
-funcType = '4' #raw_input("What would you like to calculate? ")
+funcType = '1' #raw_input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
