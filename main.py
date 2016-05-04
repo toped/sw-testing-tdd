@@ -110,25 +110,8 @@ def verifyEmailAddress(inputEmail):
         return True
     else:
         return False
-=======
->>>>>>> master
 
-=======
-def calculateDistance(x1, y1, x2,y2):
-    print("\n TO-DO: complete function")
-
-def verifyEmailAddress(inputEmail):
-    numAtSymbols = inputEmail.count('@')
-
-    matchObject = re.search('^.+@.+\.[A-za-z]{1,2}$',
-                  inputEmail)
-
-    if matchObject and numAtSymbols == 1:
-        return True
-    else:
-        return False
-
-
+        
 # Print the Menu
 printMenu()
 
