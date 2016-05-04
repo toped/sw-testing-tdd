@@ -15,7 +15,7 @@ Mauri Mitchell
 Python v2.7
 
 """
-import re #import for regular expression module
+import re  # import for regular expression module
 
 
 # This function prints the user menu
@@ -49,7 +49,32 @@ def calculateBMI(heightFeet, heightInches, weight):
     return message        
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
-    print("\n TO-DO: complete function")
+    if not isinstance(age, int) or not isinstance(salary, int) or not isinstance(percentSaved, int) or not isinstance(
+            savingsGoal, int):
+        result = "You must enter an integer, not a string"
+        return result
+    
+    savedAnnually = salary * (percentSaved/100)
+    amountAccrued = 0
+    yearsSaved = 0
+
+    if age >= 100:
+        result = "The age you entered is too high.  You shouldn't be working!"
+        return result
+
+    while amountAccrued != savingsGoal:
+        amountAccrued += savedAnnually
+        yearsSaved += 1
+
+    retirementAge = age + yearsSaved
+
+    if retirementAge >= 100:
+        result = "You will not meet your savings goal"
+    else:
+        result = retirementAge
+        print("\n You can retire at " + str(retirementAge))
+
+    return result
 
 def calculateDistance(x1, y1, x2,y2):
     print("\n TO-DO: complete function")
@@ -65,24 +90,29 @@ def verifyEmailAddress(inputEmail):
     else:
         return False
 
-#Print the Menu
+# Print the Menu
 printMenu()
 
-#Prompt user for the function that they want to run
-funcType = '1' #raw_input("What would you like to calculate? ")
+# Prompt user for the function that they want to run
+funcType = 2 # input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
     print("\n TO-DO: prompt for user input then call function to return output")
 elif funcType == "2":
     print("\n Savings Goal Calculator")
-    print("\n TO-DO: prompt for user input then call function to return output")
+    # age = int(input("What is your current age? \n"))
+    # salary = int(input("What is your current salary? \n"))
+    # percentSaved = int(input("What percentage of your salary is saved each year? \n"))
+    # savingsGoal = int(input("What is your savings goal? \n"))
+    # print(calculateRetirement(age, salary, percentSaved, savingsGoal))
+
 elif funcType == "3":
     print("\n Distance Calculator")
     print("\n TO-DO: prompt for user input then call function to return output")
 elif funcType == "4":
     print("\n Email Verifier")
-    inputString = 'hds109@msstate.ed' #raw_input("Please enter an email address that you would like to verify: ")
+    inputString = 'hds109@msstate.ed'  # raw_input("Please enter an email address that you would like to verify: ")
     isValid = verifyEmailAddress(inputString)
 
     if isValid:
