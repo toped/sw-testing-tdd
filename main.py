@@ -32,6 +32,11 @@ def calculateBMI(heightFeet, heightInches, weight):
     print("\n TO-DO: complete function")
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
+    if not isinstance(age, int) or not isinstance(salary, int) or not isinstance(percentSaved, int) or not isinstance(
+            savingsGoal, int):
+        result = "You must enter an integer, not a string"
+        return result
+
     savedAnnually = salary * (percentSaved/100)
     amountAccrued = 0
     yearsSaved = 0
@@ -83,7 +88,7 @@ elif funcType == "2":
     # salary = int(input("What is your current salary? \n"))
     # percentSaved = int(input("What percentage of your salary is saved each year? \n"))
     # savingsGoal = int(input("What is your savings goal? \n"))
-    # calculateRetirement(age, salary, percentSaved, savingsGoal)
+    # print(calculateRetirement(age, salary, percentSaved, savingsGoal))
 
 elif funcType == "3":
     print("\n Distance Calculator")
