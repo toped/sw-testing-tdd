@@ -32,7 +32,27 @@ def calculateBMI(heightFeet, heightInches, weight):
     print("\n TO-DO: complete function")
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
-    print("\n TO-DO: complete function")
+    savedAnnually = salary * (percentSaved/100)
+    amountAccrued = 0
+    yearsSaved = 0
+
+    if age >= 100:
+        result = "The age you entered is too high.  You shouldn't be working!"
+        return result
+
+    while amountAccrued != savingsGoal:
+        amountAccrued += savedAnnually
+        yearsSaved += 1
+
+    retirementAge = age + yearsSaved
+
+    if retirementAge >= 100:
+        result = "You will not meet your savings goal"
+    else:
+        result = retirementAge
+        print("\n You can retire at " + str(retirementAge))
+
+    return result
 
 def calculateDistance(x1, y1, x2,y2):
     print("\n TO-DO: complete function")
@@ -52,14 +72,19 @@ def verifyEmailAddress(inputEmail):
 printMenu()
 
 #Prompt user for the function that they want to run
-funcType = '4' #raw_input("What would you like to calculate? ")
+funcType = '2' #raw_input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
     print("\n TO-DO: prompt for user input then call function to return output")
 elif funcType == "2":
     print("\n Savings Goal Calculator")
-    print("\n TO-DO: prompt for user input then call function to return output")
+    # The following lines are commented out, as pytest cannot receive stdin while stdout is captured
+    # age = int(input("What is your current age? \n"))
+    # salary = int(input("What is your current salary? \n"))
+    # percentSaved = int(input("What percentage of your salary is saved each year? \n"))
+    # savingsGoal = int(input("What is your savings goal? \n"))
+    # calculateRetirement(age, salary, percentSaved, savingsGoal)
 elif funcType == "3":
     print("\n Distance Calculator")
     print("\n TO-DO: prompt for user input then call function to return output")
