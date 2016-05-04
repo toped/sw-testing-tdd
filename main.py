@@ -32,6 +32,11 @@ def calculateBMI(heightFeet, heightInches, weight):
     print("\n TO-DO: complete function")
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
+    if not isinstance(age, int) or not isinstance(salary, int) or not isinstance(percentSaved, int) or not isinstance(
+            savingsGoal, int):
+        result = "You must enter an integer, not a string"
+        return result
+    
     savedAnnually = salary * (percentSaved/100)
     amountAccrued = 0
     yearsSaved = 0
