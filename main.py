@@ -15,6 +15,7 @@ Mauri Mitchell
 Python v2.7
 
 """
+
 import math
 import re  # import for regular expression module
 
@@ -76,7 +77,7 @@ def calculateRetirement(age, salary, percentSaved, savingsGoal):
 
     return result
 
-<<<<<<< HEAD
+        
 def calculateDistance(x1, y1, x2, y2):
     result = None
     
@@ -109,6 +110,8 @@ def verifyEmailAddress(inputEmail):
         return True
     else:
         return False
+=======
+>>>>>>> master
 
 =======
 def calculateDistance(x1, y1, x2,y2):
@@ -125,7 +128,7 @@ def verifyEmailAddress(inputEmail):
     else:
         return False
 
->>>>>>> master
+
 # Print the Menu
 printMenu()
 
