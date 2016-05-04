@@ -83,7 +83,7 @@ elif funcType == "2":
     # salary = int(input("What is your current salary? \n"))
     # percentSaved = int(input("What percentage of your salary is saved each year? \n"))
     # savingsGoal = int(input("What is your savings goal? \n"))
-    # calculateRetirement(age, salary, percentSaved, savingsGoal)
+    # print(calculateRetirement(age, salary, percentSaved, savingsGoal))
 
 elif funcType == "3":
     print("\n Distance Calculator")
