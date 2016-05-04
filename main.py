@@ -29,7 +29,24 @@ def printMenu():
 
 
 def calculateBMI(heightFeet, heightInches, weight):
-    print("\n TO-DO: complete function")
+    if ((isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
+        kgWeight = weight * 0.45
+        totalHeightInches = (heightFeet * 12) + heightInches
+        metricHeight = totalHeightInches * 0.025
+        BMIValue = kgWeight / (math.pow(metricHeight, 2))
+    else:
+        message = "Please enter numeric values."
+        
+    if (BMIValue <= 18.5):
+        message = "Your body mass index is: " + BMIValue + ". You are underweight."
+    elif(BMIValue > 18.5 and BMIValue < 25):
+        message = "Your body mass index is: " + BMIValue + ". You are of normal weight."
+    elif (BMIValue >= 25 and BMIValue < 30):
+        message = "Your body mass index is: " + BMIValue + ". You are overweight."
+    elif (BMIValue >= 30):
+        message = "Your body mass index is: " + BMIValue + ". You are obese."
+
+    return message        
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
     if not isinstance(age, int) or not isinstance(salary, int) or not isinstance(percentSaved, int) or not isinstance(
@@ -59,6 +76,7 @@ def calculateRetirement(age, salary, percentSaved, savingsGoal):
 
     return result
 
+<<<<<<< HEAD
 def calculateDistance(x1, y1, x2, y2):
     result = None
     
@@ -92,6 +110,22 @@ def verifyEmailAddress(inputEmail):
     else:
         return False
 
+=======
+def calculateDistance(x1, y1, x2,y2):
+    print("\n TO-DO: complete function")
+
+def verifyEmailAddress(inputEmail):
+    numAtSymbols = inputEmail.count('@')
+
+    matchObject = re.search('^.+@.+\.[A-za-z]{1,2}$',
+                  inputEmail)
+
+    if matchObject and numAtSymbols == 1:
+        return True
+    else:
+        return False
+
+>>>>>>> master
 # Print the Menu
 printMenu()
 
