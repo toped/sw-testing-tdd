@@ -36,6 +36,7 @@ def calculateBMI(heightFeet, heightInches, weight):
         BMIValue = kgWeight / (math.pow(metricHeight, 2))
     else:
         message = "Please enter numeric values."
+        return message
         
     if (BMIValue <= 18.5):
         message = "Your body mass index is: " + BMIValue + ". You are underweight."
