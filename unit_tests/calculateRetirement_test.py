@@ -15,7 +15,6 @@ def test_goal_not_met():
 def test_age():
     assert calculateRetirement(100, 20000, 20, 500000) == "The age you entered is too high.  You shouldn't be working!"
 
-
 # test to see if there is any non-numeric input
 def test_input_type_not_str():
     assert calculateRetirement("str", 20000, 20, 500000) == "You must enter an integer, not a string"
