@@ -51,11 +51,7 @@ def calculateBMI(heightFeet, heightInches, weight):
     return message        
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
-    if not isinstance(age, int) or not isinstance(salary, int) or not isinstance(percentSaved, int) or not isinstance(
-            savingsGoal, int):
-        result = "You must enter an integer, not a string"
-        return result
-
+    
     savedAnnually = salary * (percentSaved/100)
     amountAccrued = 0
     yearsSaved = 0
@@ -116,8 +112,8 @@ def verifyEmailAddress(inputEmail):
 # Print the Menu
 printMenu()
 
-# Prompt user for the function that they want to run
-funcType = 1 # input("What would you like to calculate? ")
+#Prompt user for the function that they want to run
+funcType = '2' #raw_input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
@@ -128,6 +124,8 @@ if funcType == "1":
     #print(result)
 elif funcType == "2":
     print("\n Savings Goal Calculator")
+
+    # The following lines are commented out, as pytest cannot receive stdin while stdout is captured
     # age = int(input("What is your current age? \n"))
     # salary = int(input("What is your current salary? \n"))
     # percentSaved = int(input("What percentage of your salary is saved each year? \n"))
