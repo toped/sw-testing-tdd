@@ -15,8 +15,9 @@ Mauri Mitchell
 Python v2.7
 
 """
-import re  # import for regular expression module
 
+import math
+import re  # import for regular expression module
 
 # This function prints the user menu
 def printMenu():
@@ -29,14 +30,35 @@ def printMenu():
 
 
 def calculateBMI(heightFeet, heightInches, weight):
-    print("\n TO-DO: complete function")
+    if ((isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
+        kgWeight = weight * 0.45
+        totalHeightInches = (heightFeet * 12) + heightInches
+        metricHeight = totalHeightInches * 0.025
+        BMIValue = kgWeight / (math.pow(metricHeight, 2))
+    else:
+        message = "Please enter numeric values."
+        
+    if (BMIValue <= 18.5):
+        message = "Your body mass index is: " + BMIValue + ". You are underweight."
+    elif(BMIValue > 18.5 and BMIValue < 25):
+        message = "Your body mass index is: " + BMIValue + ". You are of normal weight."
+    elif (BMIValue >= 25 and BMIValue < 30):
+        message = "Your body mass index is: " + BMIValue + ". You are overweight."
+    elif (BMIValue >= 30):
+        message = "Your body mass index is: " + BMIValue + ". You are obese."
+
+    return message        
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
     if not isinstance(age, int) or not isinstance(salary, int) or not isinstance(percentSaved, int) or not isinstance(
             savingsGoal, int):
         result = "You must enter an integer, not a string"
         return result
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 410a5bd0f61b2b115ea77a9c3ab42be106937842
     savedAnnually = salary * (percentSaved/100)
     amountAccrued = 0
     yearsSaved = 0
@@ -59,8 +81,28 @@ def calculateRetirement(age, salary, percentSaved, savingsGoal):
 
     return result
 
-def calculateDistance(x1, y1, x2,y2):
-    print("\n TO-DO: complete function")
+        
+def calculateDistance(x1, y1, x2, y2):
+    result = None
+    
+    # ensure x and y values are either a float or int
+    if((isinstance(x1, int) or isinstance(x1, float)) and (isinstance(x2, int) or isinstance(x2, float)) and (isinstance(y1, int) or isinstance(y1, float)) and (isinstance(y2, int) or isinstance(y2, float))):
+        #ensure x and y values are not larger than 1000000000
+        if(x1 > 1000000000 or x2 > 1000000000 or y1 > 1000000000 or y2 > 1000000000):
+            result = "One of your values is too large. x and y values must be <= 1000000000."
+        #ensure x and y values are not smaller than -1000000000
+        elif(x1 < -1000000000 or x2 < -1000000000 or y1 < -1000000000 or y2 < -1000000000):
+            result = "One of your values is too small. x and y values must be >= -1000000000."
+        #else return resulting distance
+        else:
+            result = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    #else display that x or y value is not numeric
+    else:
+        result = "One of your values is not numeric. x and y values must be either an integer or float."
+       
+    # return resulting integer, float, or string
+    return result
+    
 
 def verifyEmailAddress(inputEmail):
     numAtSymbols = inputEmail.count('@')
@@ -73,6 +115,7 @@ def verifyEmailAddress(inputEmail):
     else:
         return False
 
+        
 # Print the Menu
 printMenu()
 
