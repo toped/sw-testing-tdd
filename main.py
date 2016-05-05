@@ -30,7 +30,7 @@ def printMenu():
 
 
 def calculateBMI(heightFeet, heightInches, weight):
-    if ((isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
+    if (isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
         kgWeight = weight * 0.45
         totalHeightInches = (heightFeet * 12) + heightInches
         metricHeight = totalHeightInches * 0.025
