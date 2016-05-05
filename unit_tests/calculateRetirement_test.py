@@ -21,7 +21,4 @@ def test_input_type_not_str():
     assert calculateRetirement(20, "str", 20, 500000) == "You must enter an integer, not a string"
     assert calculateRetirement(20, 20000, "str", 500000) == "You must enter an integer, not a string"
     assert calculateRetirement(20, 20000, 20, "str") == "You must enter an integer, not a string"
-<<<<<<< HEAD
 
-=======
->>>>>>> 410a5bd0f61b2b115ea77a9c3ab42be106937842
