@@ -15,6 +15,7 @@ Mauri Mitchell
 Python v2.7
 
 """
+import math
 import re  # import for regular expression module
 
 
