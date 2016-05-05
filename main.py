@@ -95,11 +95,15 @@ def verifyEmailAddress(inputEmail):
 printMenu()
 
 # Prompt user for the function that they want to run
-funcType = 2 # input("What would you like to calculate? ")
+funcType = 1 # input("What would you like to calculate? ")
 
 if funcType == "1":
     print("\n BMI Calculator")
-    print("\n TO-DO: prompt for user input then call function to return output")
+    #heightFeet = input("Enter the 'feet' dimension of your height: ")
+    #heightInches = input("Enter the 'inches' dimension of your height: ")
+    #weight = input("Enter your weight in pounds: ")
+    #result = calculateBMI(heightFeet, heightInches, weight)
+    #print(result)
 elif funcType == "2":
     print("\n Savings Goal Calculator")
     # age = int(input("What is your current age? \n"))
