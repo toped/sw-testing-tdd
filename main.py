@@ -54,11 +54,7 @@ def calculateRetirement(age, salary, percentSaved, savingsGoal):
             savingsGoal, int):
         result = "You must enter an integer, not a string"
         return result
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 410a5bd0f61b2b115ea77a9c3ab42be106937842
     savedAnnually = salary * (percentSaved/100)
     amountAccrued = 0
     yearsSaved = 0
