@@ -52,7 +52,7 @@ def calculateBMI(heightFeet, heightInches, weight):
 
 def calculateRetirement(age, salary, percentSaved, savingsGoal):
     
-    savedAnnually = salary * (percentSaved/100)
+    savedAnnually = salary * (float(percentSaved)/100)
     amountAccrued = 0
     yearsSaved = 0
 
@@ -60,7 +60,7 @@ def calculateRetirement(age, salary, percentSaved, savingsGoal):
         result = "The age you entered is too high.  You shouldn't be working!"
         return result
 
-    while amountAccrued != savingsGoal:
+    while amountAccrued < savingsGoal:
         amountAccrued += savedAnnually
         yearsSaved += 1
 
@@ -125,12 +125,12 @@ if funcType == "1":
 elif funcType == "2":
     print("\n Savings Goal Calculator")
 
-    # The following lines are commented out, as pytest cannot receive stdin while stdout is captured
-    # age = int(input("What is your current age? \n"))
-    # salary = int(input("What is your current salary? \n"))
-    # percentSaved = int(input("What percentage of your salary is saved each year? \n"))
-    # savingsGoal = int(input("What is your savings goal? \n"))
-    # print(calculateRetirement(age, salary, percentSaved, savingsGoal))
+    #The following lines are commented out, as pytest cannot receive stdin while stdout is captured
+    #age = int(input("What is your current age? \n"))
+    #salary = int(input("What is your current salary? \n"))
+    #percentSaved = float(input("What percentage of your salary is saved each year? \n"))
+    #savingsGoal = int(input("What is your savings goal? \n"))
+    #print(calculateRetirement(age, salary, percentSaved, savingsGoal))
 
 elif funcType == "3":
     print("\n Distance Calculator")
