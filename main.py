@@ -30,7 +30,7 @@ def printMenu():
 
 
 def calculateBMI(heightFeet, heightInches, weight):
-    if ((isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
+    if (isinstance(heightFeet, int) or isinstance(heightFeet, float)) and (isinstance(heightInches, int) or isinstance(heightInches, float)) and (isinstance(weight, int) or isinstance(weight, float)):
         kgWeight = weight * 0.45
         totalHeightInches = (heightFeet * 12) + heightInches
         metricHeight = totalHeightInches * 0.025
@@ -40,13 +40,13 @@ def calculateBMI(heightFeet, heightInches, weight):
         return message
         
     if (BMIValue <= 18.5):
-        message = "Your body mass index is: " + BMIValue + ". You are underweight."
+        message = "Your body mass index is: " + str(BMIValue) + ". You are underweight."
     elif(BMIValue > 18.5 and BMIValue < 25):
-        message = "Your body mass index is: " + BMIValue + ". You are of normal weight."
+        message = "Your body mass index is: " + str(BMIValue) + ". You are of normal weight."
     elif (BMIValue >= 25 and BMIValue < 30):
-        message = "Your body mass index is: " + BMIValue + ". You are overweight."
+        message = "Your body mass index is: " + str(BMIValue) + ". You are overweight."
     elif (BMIValue >= 30):
-        message = "Your body mass index is: " + BMIValue + ". You are obese."
+        message = "Your body mass index is: " + str(BMIValue) + ". You are obese."
 
     return message        
 
